@@ -1,0 +1,520 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+ul {
+  padding: 0;
+  list-style: none;
+}
+img {
+  max-width: 100%;
+}
+body {
+  background-color: #f0f2f5;
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+.heade {
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+}
+.heade .right {
+  text-align: right;
+}
+.heade .left {
+  display: flex;
+  align-items: center;
+}
+.logo a {
+  font-size: 40px;
+  width: 43px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+}
+.searchBox input {
+  font-size: 20px;
+  padding: 3px 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+.searchBox {
+  background-color: #f0f2f5;
+  cursor: default;
+  margin-left: 8px;
+  padding: 6px 8px;
+  border-radius: 20px;
+}
+.searchBox input::placeholder {
+  font-size: 14px;
+}
+.mid {
+  text-align: center;
+}
+.mid a {
+  border-bottom: 3px solid #fff;
+  padding: 11px 45px;
+  color: #1b74e4;
+}
+.mid a.active {
+  border-bottom: 3px solid #1b74e4;
+}
+.mid a.active:hover {
+  background-color: transparent;
+  border-radius: 0;
+}
+.mid a:hover {
+  background-color: #f0f2f5;
+  border-radius: 10px;
+}
+.heade {
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  padding: 0 20px;
+  padding-top: 5px;
+  background-color: #fff;
+  box-shadow: 4px -2px 5px;
+}
+.right a {
+  width: 39px;
+  height: 39px;
+  background-color: #f0f2f5;
+  border-radius: 50%;
+  align-items: center;
+  line-height: 50px;
+  text-align: center;
+}
+.right a svg {
+  color: #050505;
+  font-size: 20px;
+}
+.heade .right {
+  text-align: right;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 10px;
+}
+.ppf img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.right a:hover {
+  background-color: #ccd0d5;
+}
+
+.bodyLeft ul li {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+.bodyLeft .ppf img {
+  width: 25px;
+  height: 25px;
+}
+.bodyLeft {
+  padding-top: 20px;
+}
+.bodyLeft p {
+  font-size: 15px;
+}
+.bodyLeft ul li {
+  padding: 8px;
+  border-radius: 37px;
+  cursor: pointer;
+  padding-left: 20px;
+}
+.bodyLeft ul li:hover {
+  background-color: #ebedf0;
+}
+.bodyLeft li img {
+  width: 25px;
+}
+.bodyPart {
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+}
+.bodyLeft ul {
+  height: 86vh;
+  overflow-y: scroll;
+}
+
+.bodyLeft ul::-webkit-scrollbar {
+  width: 10px;
+}
+.bodyLeft ul::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.bodyLeft ul::-webkit-scrollbar-thumb {
+  background-color: #cccccc;
+  border-radius: 20px;
+  display: none;
+  transition: 1s;
+}
+.bodyLeft ul:hover::-webkit-scrollbar-thumb {
+  display: block;
+  transition: 1s;
+}
+.bodyLeft ul {
+  scrollbar-width: thin;
+}
+.bodyLeft ul {
+  scrollbar-color: #6969dd #e0e0e0;
+  scrollbar-width: thin;
+}
+
+.topHeader {
+  padding-top: 20px;
+}
+.ppfoBox {
+  width: 113px;
+  height: 192px;
+  border-radius: 13px;
+  box-shadow: 0px 0px 6px slategray;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+.topHeader {
+  gap: 12px;
+  justify-content: center;
+  display: flex;
+}
+.ppfoBox img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+}
+.ppfoBox:hover img {
+  transform: scale(1.1);
+}
+.ppfoBox p {
+  position: absolute;
+  bottom: 10px;
+  color: #fff;
+  font-size: 12px;
+  left: 15px;
+  text-shadow: 1px 1px 3px black;
+}
+.pfh {
+  position: absolute;
+  top: 10px;
+  width: 35px;
+  height: 35px;
+  left: 10px;
+}
+.pfh img {
+  border-radius: 50px;
+  border: 3px solid #1b74e4;
+}
+
+.foote p {
+  position: initial;
+}
+.foote {
+  position: absolute;
+  bottom: 0;
+  background-color: #fff;
+  height: 41px;
+  width: 100%;
+}
+.foote p {
+  left: 0;
+  position: relative;
+  color: #000;
+  text-shadow: 0 0 BLACK;
+  text-align: center;
+  bottom: -19px;
+}
+.footersvg {
+  position: absolute;
+  top: -16px;
+  left: 38px;
+  width: 30px;
+  height: 30px;
+  background-color: #1b74e4;
+  line-height: 24px;
+  margin: auto;
+  color: #fff;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+.footersvg svg {
+  position: relative;
+  left: 6px;
+  top: 5px;
+}
+.postArea {
+  box-shadow: 0px 0px 6px slategrey;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 12px 17px;
+  width: 72%;
+  margin: auto;
+  margin-top: 25px;
+}
+.postBox {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.postbtn {
+  width: 100%;
+  height: 33px;
+  background-color: #e4e6e8;
+  border-radius: 23px;
+  padding: 3px;
+  cursor: pointer;
+}
+.postbtn:hover {
+  background-color: #ccd0d5;
+}
+.ppst {
+  width: 90%;
+}
+.postBox {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e4e6e8;
+  margin-bottom: 10px;
+}
+.postArea ul {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+  padding-bottom: 6px;
+}
+.postArea ul li {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}
+.postArea ul li svg {
+  font-size: 25px;
+}
+.postArea ul li:nth-child(1) svg {
+  color: red;
+}
+.postArea ul li:nth-child(2) svg {
+  color: #41b35d;
+}
+.postArea ul li:nth-child(3) svg {
+  color: #eab026;
+}
+.postitemarea {
+  max-width: 77%;
+  margin: auto;
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px slategrey;
+}
+.postITemContat {
+  padding: 13px 15px;
+}
+.userp {
+  display: flex;
+  gap: 10px;
+}
+.userp h6 {
+  font-size: 14px;
+}
+.userp p {
+  font-size: 12px;
+}
+.user {
+  display: flex;
+  justify-content: space-between;
+}
+.ThreeDot {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  line-height: 30px;
+  font-size: 18px;
+  color: #000;
+  cursor: pointer;
+}
+.ThreeDot:hover {
+  background-color: #ebedf0;
+}
+.postItemImage {
+  padding: 5px 0;
+}
+.likeIcons img {
+  width: 18px;
+}
+.postItemFooter {
+  padding: 5px 20px;
+}
+.likeCounterLeft {
+  display: flex;
+  gap: 10px;
+}
+.likeCounterLeft span {
+  margin-top: -2px;
+}
+.likeCounter {
+  display: flex;
+  justify-content: space-between;
+}
+.commentRight p {
+  font-size: 14px;
+}
+.linkBox {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px 0;
+}
+
+.likeCounter {
+  border-bottom: 1px solid #e4e6e8;
+  padding-bottom: 10px;
+}
+.linkBox button {
+  background-color: transparent;
+  border: none;
+  font-size: 17px;
+  color: #555;
+  padding: 10px 30px;
+}
+.postitemarea {
+  margin-bottom: 20px;
+}
+.bodymid {
+  height: 86vh;
+  overflow-y: scroll;
+}
+.bodymid::-webkit-scrollbar {
+  display: none;
+}
+.bodyRight ul li img {
+  border-radius: 50%;
+}
+.postbtn span {
+  position: relative;
+  font-size: 16px;
+  margin-left: 8px;
+  top: 5px;
+  pointer-events: none;
+}
+.popupbox {
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 400px;
+  height: fit-content;
+  padding: 20px;
+  box-shadow: 1px 1px 16px darkgrey;
+  border-radius: 12px;
+}
+#postPopBox {
+  display: none;
+}
+#eidtPopBox {
+  display: none;
+}
+
+.popupbox h3 {
+  text-align: center;
+}
+.closeBtn button,
+.closeBtneidt button {
+  height: 20px;
+  position: absolute;
+  top: -10px;
+  right: -8px;
+  width: 20px;
+  background-color: red;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.popupbox .head {
+  position: relative;
+}
+.popbody input,
+.popbody textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+.submitBtn {
+  background-color: #1b74e4;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 10px !important;
+  margin-bottom: 0 !important;
+}
+
+.alert-btn {
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin: 10px 0;
+  text-align: center;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+}
+.danger {
+  background: red;
+}
+.success {
+  background: green;
+}
+.ThreeDot {
+  position: relative;
+}
+.tolbox {
+  position: absolute;
+  right: 0;
+  background: #fff;
+  width: 220px;
+  text-align: left;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px slategrey;
+  display: none;
+}
+.tolbox ul li a {
+  box-sizing: border-box;
+  padding: 2px 18px;
+  width: 100%;
+  border-radius: 14px;
+}
+.tolbox ul li:hover a {
+  background: #f0f2f5;
+}
+.ThreeDot i {
+  pointer-events: none;
+}
+.ThreeDot:hover .tolbox {
+  display: block;
+}
+.notPost {
+  text-align: center;
+  color: red;
+}
