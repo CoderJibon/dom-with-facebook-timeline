@@ -43,7 +43,7 @@ const displayPost = () => {
   }
   if (fbPostArry) {
       
-    fbPostArry.map((item,index) => {
+    fbPostArry.reverse().map((item,index) => {
         postAll += ` <div class="postitemarea">
             <div class="postItemBox">
               <div class="postITemContat">
@@ -61,8 +61,8 @@ const displayPost = () => {
                     <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
                      <div class="tolbox">
                          <ul>
-                            <li><a edit_index="${index}" href="">Edit post</a></li>
-                            <li><a delate_index="${index}" href="">Move to trash</a></li>
+                            <li><a edit_index="${item?.id}" href="">Edit post</a></li>
+                            <li><a delate_index="${item?.id}" href="">Move to trash</a></li>
                         </ul>
                      </div>
                   </div>
@@ -133,14 +133,15 @@ postItemsAll.onclick = (e) => {
         if(editIndex){
             eidtPopBox.style.display = "block";
 
-            const dataAll = getLocalStorage('fbPost');
-            const getData = dataAll[editIndex];
+          const dataAll = getLocalStorage('fbPost');
+          const editId = dataAll.findIndex(obj => obj.id == editIndex);
+          const getData = dataAll[editId];
 
             editForm.innerHTML = `<div class="popbody">
                 <div>
                 <label for="">Name</label>
                 <input name="name" value="${getData.name}" type="text" />
-                <input name="index" value="${editIndex}" type="hidden" />
+                <input name="id" value="${getData.id}" type="hidden" />
                 </div>
                 <div>
                 <label for="">UserPhoto</label>
@@ -165,8 +166,9 @@ postItemsAll.onclick = (e) => {
     if (e.target.hasAttributes('delate_index')) {
         const delateIndex = e.target.getAttribute('delate_index');
         if (delateIndex) {
-            let dataLs = getLocalStorage('fbPost');
-            dataLs.splice(delateIndex,1);
+          let dataLs = getLocalStorage('fbPost');
+          const dalateId = dataLs.findIndex(obj => obj.id == delateIndex);
+            dataLs.splice(dalateId,1);
             updateLocalStorage('fbPost', dataLs);
             displayPost();
         }
@@ -181,18 +183,18 @@ editForm.onsubmit = (e) => {
     e.preventDefault();
 
     const editform = new FormData(e.target);
-    const { name,index,userContent,userPhoto,bgPhoto} = Object.fromEntries(editform.entries());
+    const { name,userContent,userPhoto,bgPhoto,id} = Object.fromEntries(editform.entries());
 
     if (!name || !userPhoto) {
         Editbox.innerHTML = alertShow('All Field is required!');
 
     } else {
-
-       let dataAll = getLocalStorage('fbPost');
-       dataAll[index] = {name,userContent,userPhoto,bgPhoto};
-        updateLocalStorage('fbPost', dataAll);
-        eidtPopBox.style.display = "none";
-       displayPost(); 
+      let dataAll = getLocalStorage('fbPost');
+      const editId = dataAll.findIndex(obj => obj.id == id);
+      dataAll[editId] = { name,userContent,userPhoto,bgPhoto,id};
+      updateLocalStorage('fbPost', dataAll);
+      eidtPopBox.style.display = "none";
+      displayPost(); 
         
     }
 
@@ -205,15 +207,20 @@ const postForm = document.getElementById('postForm');
 postForm.onsubmit = (e) => {
     e.preventDefault();
 
-    const form_data = new FormData(e.target);
-    const data = Object.fromEntries(form_data.entries());
-    
-    const {name, userPhoto, bgPhoto, userContent} = Object.fromEntries(form_data.entries());
+  const form_data = new FormData(e.target);
+  const data = Object.fromEntries(form_data.entries());
+  const { name, userPhoto, bgPhoto, userContent } = Object.fromEntries(form_data.entries());
 
+  // make the random id
+  const dateTime = new Date();
+  const randomId = Math.round(Math.random() + 1000 + dateTime.getTime());
+
+  
     if (!name || !userPhoto) {
        alserbox.innerHTML = alertShow('All Field is required!');
     } else {
-        SetLocalStorage('fbPost', data);
+        const AddData = { ...data, id: randomId }
+        SetLocalStorage('fbPost', AddData);
         e.target.reset();
         postPopBox.style.display = "none";
         displayPost();
